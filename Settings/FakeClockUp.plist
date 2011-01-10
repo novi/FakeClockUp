@@ -1,40 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+  <dict>
 	<key>entry</key>
 	<dict>
-		<key>cell</key>
-		<string>PSLinkCell</string>
-		<key>label</key>
-		<string>FakeClockUp</string>
-		<key>icon</key>
-		<string>FakeClockUp.png</string>
+	  <key>cell</key>
+	  <string>PSLinkCell</string>
+	  <key>label</key>
+	  <string>FakeClockUp</string>
+	  <key>icon</key>
+	  <string>FakeClockUp.png</string>
 	</dict>
 	<key>title</key>
 	<string>FakeClockUp</string>
 	<key>items</key>
 	<array>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-		</dict>
-		<dict>
-			<key>PostNotification</key>
-			<string>jp.novi.FakeClockUp.SettingsChanged</string>
-			<key>cell</key>
-			<string>PSEditTextCell</string>
-			<key>defaults</key>
-			<string>jp.novi.FakeClockUp</string>
-			<key>default</key>
-			<string>1</string>
-			<key>detail</key>
-			<string>PSListItemsController</string>
-			<key>key</key>
-			<string>duration</string>
-			<key>label</key>
-			<string>Duration</string>
-		</dict>
+	  <dict>
+		<key>cell</key>
+		<string>PSGroupCell</string>
+		<key>label</key>
+		<string>Settings</string>
+	  </dict>
+	  <dict>
+		<key>cell</key>
+		<string>PSLinkListCell</string>
+		<key>defaults</key>
+		<string>jp.novi.FakeClockUp</string>
+		<key>default</key>
+		<string>0.4</string>
+		<key>key</key>
+		<string>duration</string>
+		<key>label</key>
+		<string>Animation Speed</string>
+		<key>detail</key>
+		<string>PSListItemsController</string>
+		<key>validTitles</key>
+		<array>
+		  <string>x10.0</string>
+		  <string>x 5.0</string>
+		  <string>x 3.3</string>
+		  <string>x 2.5</string>
+		  <string>x 2.0</string>
+		  <string>x 1.6</string>
+		  <string>x 1.4</string>
+		  <string>x 1.2</string>
+		  <string>x 1.1</string>
+		  <string>x 1.0</string>
+		  <string>x 1/2</string>
+		  <string>x 1/3</string>
+		  <string>x 1/4</string>
+		  <string>x 1/5</string>
+		  <string>x 1/6</string>
+		  <string>x 1/7</string>
+		  <string>x 1/8</string>
+		  <string>x 1/9</string>
+		  <string>x 1/10</string>
+		</array>
+		<key>validValues</key>
+		<array>
+		  <string>0.1</string>
+		  <string>0.2</string>
+		  <string>0.3</string>
+		  <string>0.4</string>
+		  <string>0.5</string>
+		  <string>0.6</string>
+		  <string>0.7</string>
+		  <string>0.8</string>
+		  <string>0.9</string>
+		  <string>1.0</string>
+		  <string>2.0</string>
+		  <string>3.0</string>
+		  <string>4.0</string>
+		  <string>5.0</string>
+		  <string>6.0</string>
+		  <string>7.0</string>
+		  <string>8.0</string>
+		  <string>9.0</string>
+		  <string>10.0</string>
+		</array>
+		<key>PostNotification</key>
+		<string>jp.novi.FakeClockUp.preferencechanged</string>
+      </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSTitleValueCell</string>
+		<key>label</key>
+		<string>Respring required.</string>
+      </dict>
+	  <dict>
+		<key>cell</key>
+		<string>PSGroupCell</string>
+		<key>isStaticText</key>
+		<true/>
+		<key>label</key>
+		<string>Credit</string>
+	  </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSTitleValueCell</string>
+		<key>label</key>
+		<string>FakeClockUp Ver.0.1</string>
+      </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSTitleValueCell</string>
+		<key>label</key>
+		<string>Written by novi</string>
+      </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSTitleValueCell</string>
+		<key>label</key>
+		<string>http://iddy.jp/profile/novi/</string>
+      </dict>
+      <dict>
+		<key>cell</key>
+		<string>PSGroupCell</string>
+      </dict>
 	</array>
-</dict>
+  </dict>
 </plist>
