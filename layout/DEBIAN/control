@@ -1,0 +1,12 @@
+Package: jp.novi.FakeClockUp
+Name: FakeClockUp
+Homepage: http://hitoriblog.com/?p=1967
+Version: 0.1.1
+Section: Tweaks
+Maintainer: moyashi <hitoriblog_NO_NO_SPAM@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Description: FakeClockUp accelerates UIKit transition animation.
+author: novi <novi.mad@gmail.com>
+depiction: http://hitoriblog.com/depiction/FakeClockUp.html
+dev: novi
