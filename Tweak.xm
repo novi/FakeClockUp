@@ -13,6 +13,6 @@
       duration *= durm;
     }
   }
-  return %orig;
+  %orig;
 }
 %end
