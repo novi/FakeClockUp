@@ -15,7 +15,9 @@ static float durMulti = 1.0;
 __attribute__((constructor)) 
 static void FakeClockUp_initializer() 
 { 
-  NSDictionary* udDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/jp.novi.FakeClockUp.plist"];
+  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	
+  NSDictionary *udDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/jp.novi.FakeClockUp.plist"];
 
   if (udDict) {
     float durm = [[udDict objectForKey:@"duration"] floatValue];
@@ -23,4 +25,6 @@ static void FakeClockUp_initializer()
       durMulti = durm;
     }
   }
+	
+	[pool release];
 }
