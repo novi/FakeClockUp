@@ -1,3 +1,4 @@
+SDKVERSION = latest
 include theos/makefiles/common.mk
 
 TWEAK_NAME = FakeClockUp
