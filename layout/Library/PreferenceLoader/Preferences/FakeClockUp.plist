@@ -6,13 +6,11 @@
 	<dict>
 		<key>cell</key>
 		<string>PSLinkCell</string>
-		<key>label</key>
-		<string>FakeClockUp</string>
 		<key>icon</key>
 		<string>FakeClockUp.png</string>
+		<key>label</key>
+		<string>FakeClockUp</string>
 	</dict>
-	<key>title</key>
-	<string>FakeClockUp</string>
 	<key>items</key>
 	<array>
 		<dict>
@@ -24,16 +22,18 @@
 		<dict>
 			<key>cell</key>
 			<string>PSLinkListCell</string>
-			<key>defaults</key>
-			<string>jp.novi.FakeClockUp</string>
 			<key>default</key>
 			<string>0.4</string>
+			<key>defaults</key>
+			<string>jp.novi.FakeClockUp</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
 			<key>key</key>
 			<string>duration</string>
 			<key>label</key>
 			<string>Animation Speed</string>
-			<key>detail</key>
-			<string>PSListItemsController</string>
+			<key>PostNotification</key>
+			<string>jp.novi.FakeClockUp.preferencechanged</string>
 			<key>validTitles</key>
 			<array>
 				<string>x10.0</string>
@@ -78,8 +78,6 @@
 				<string>9.0</string>
 				<string>10.0</string>
 			</array>
-			<key>PostNotification</key>
-			<string>jp.novi.FakeClockUp.preferencechanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -93,7 +91,7 @@
 			<key>cell</key>
 			<string>PSTitleValueCell</string>
 			<key>label</key>
-			<string>FakeClockUp Ver.0.1</string>
+			<string>FakeClockUp Ver.0.2</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -105,12 +103,20 @@
 			<key>cell</key>
 			<string>PSTitleValueCell</string>
 			<key>label</key>
-			<string>http://iddy.jp/profile/novi/</string>
+			<string>http://about.me/yusukeito</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSTitleValueCell</string>
+			<key>label</key>
+			<string>Special Thanks: r-plus</string>
 		</dict>
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 		</dict>
 	</array>
+	<key>title</key>
+	<string>FakeClockUp</string>
 </dict>
 </plist>
