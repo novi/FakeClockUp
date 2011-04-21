@@ -1,14 +1,43 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <SpringBoard/SpringBoard.h>
+
+static float durMulti = 1.0;
+static BOOL FCEditing = NO;
 
 %hook CAAnimation
 
-static float durMulti = 1.0;
-
 - (void)setDuration:(NSTimeInterval)duration
 {
-  duration *= durMulti;
-  %orig;
+	if (!FCEditing)
+		duration *= durMulti;
+	%orig;
+}
+
+%end
+
+%hook SBIconController
+
+- (void)setIsEditing:(BOOL)editing
+{
+	FCEditing = editing;
+	%orig;
+}
+
+%end
+
+%hook SBAppSwitcherController
+
+- (void)_beginEditing
+{
+	FCEditing = YES;
+	%orig;
+}
+
+- (void)_stopEditing
+{
+	FCEditing = NO;
+	%orig;
 }
 
 %end
@@ -27,7 +56,7 @@ static void LoadSettings(CFNotificationCenterRef center, void *observer, CFStrin
 __attribute__((constructor)) 
 static void FakeClockUp_initializer() 
 { 
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 
 	CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, LoadSettings, CFSTR("jp.novi.FakeClockUp.preferencechanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 	LoadSettings(nil,nil,nil,nil,nil);
