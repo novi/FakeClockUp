@@ -11,12 +11,10 @@ static float durMulti = 1.0;
 static void LoadSettings()
 {
   NSDictionary *udDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/jp.novi.FakeClockUp.plist"];
-  if (udDict) {
-    id durationExsist = [udDict objectForKey:@"duration"];
-    float durm = durationExsist ? [durationExsist floatValue] : 0.4;
-    if (durm != 0.0 && durm >= 0.001 && durm <= 20)
-      durMulti = durm;
-  }
+  id durationExsist = [udDict objectForKey:@"duration"];
+  float durm = durationExsist ? [durationExsist floatValue] : 0.4;
+  if (durm != 0.0 && durm >= 0.001 && durm <= 20)
+    durMulti = durm;
 }
 
 static void ChangeNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
