@@ -1,4 +1,3 @@
-SDKVERSION = 4.3
 include /opt/theos/makefiles/common.mk
 
 TWEAK_NAME = FakeClockUp
