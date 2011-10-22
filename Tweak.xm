@@ -3,16 +3,15 @@ static float durMulti = 1.0;
 %hook CAAnimation
 - (void)setDuration:(NSTimeInterval)duration
 {
-  duration *= durMulti;
-  %orig;
+  %orig(duration * durMulti);
 }
 %end
 
 static void LoadSettings()
 {
   NSDictionary *udDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/jp.novi.FakeClockUp.plist"];
-  id durationExsist = [udDict objectForKey:@"duration"];
-  float durm = durationExsist ? [durationExsist floatValue] : 0.4;
+  id durationExist = [udDict objectForKey:@"duration"];
+  float durm = durationExist ? [durationExist floatValue] : 0.4;
   if (durm != 0.0 && durm >= 0.001 && durm <= 20)
     durMulti = durm;
 }

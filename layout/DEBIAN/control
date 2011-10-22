@@ -1,7 +1,7 @@
 Package: jp.novi.FakeClockUp
 Name: FakeClockUp
 Homepage: http://hitoriblog.com/?p=1967
-Version: 0.3
+Version: 0.2
 Section: Tweaks
 Maintainer: moyashi <hitoriblog_NO_NO_SPAM@gmail.com>
 Depends: mobilesubstrate, preferenceloader
