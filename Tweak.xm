@@ -1,11 +1,44 @@
 static float durMulti = 1.0;
+static BOOL FCEditing = NO;
 
 %hook CAAnimation
 - (void)setDuration:(NSTimeInterval)duration
 {
-  %orig(duration * durMulti);
+  if (FCEditing) {
+    %orig(duration);
+  } else {
+    %orig(duration * durMulti);
+  }
 }
 %end
+
+
+%hook SBIconController
+
+- (void)setIsEditing:(BOOL)editing
+{
+	FCEditing = editing;
+	%orig;
+}
+
+%end
+
+%hook SBAppSwitcherController
+
+- (void)_beginEditing
+{
+	FCEditing = YES;
+	%orig;
+}
+
+- (void)_stopEditing
+{
+	FCEditing = NO;
+	%orig;
+}
+
+%end
+
 
 static void LoadSettings()
 {
