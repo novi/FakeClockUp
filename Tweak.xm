@@ -1,10 +1,11 @@
 static float durMulti = 1.0;
 static BOOL FCEditing = NO;
+static BOOL disableOnEdit = YES;
 
 %hook CAAnimation
 - (void)setDuration:(NSTimeInterval)duration
 {
-  if (FCEditing) {
+  if (FCEditing && disableOnEdit) {
     %orig(duration);
   } else {
     %orig(duration * durMulti);
@@ -43,10 +44,15 @@ static BOOL FCEditing = NO;
 static void LoadSettings()
 {
   NSDictionary *udDict = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/jp.novi.FakeClockUp.plist"];
+  
   id durationExist = [udDict objectForKey:@"duration"];
   float durm = durationExist ? [durationExist floatValue] : 0.4;
   if (durm != 0.0 && durm >= 0.001 && durm <= 20)
     durMulti = durm;
+  
+  if ([udDict objectForKey:@"disableOnEdit"]) {
+    disableOnEdit = [[udDict objectForKey:@"disableOnEdit"] boolValue];
+  }
 }
 
 static void ChangeNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
