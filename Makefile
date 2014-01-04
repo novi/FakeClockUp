@@ -2,6 +2,7 @@ include theos/makefiles/common.mk
 
 TWEAK_NAME = FakeClockUp
 FakeClockUp_FILES = Tweak.xm
+FakeClockUp_FRAMEWORKS = UIKit
 
 #export THEOS_PLATFORM_SDK_ROOT_armv6 = /Applications/Xcode_4.4.1.app/Contents/Developer
 #export SDKVERSION_armv6 = 5.1
