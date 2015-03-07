@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = FakeClockUp;
+	cell = PSLinkCell;
+	detail = FakeClockUpListController;
+	icon = FakeClockUp.png;
+	isController = 1;
+	label = FakeClockUp;
+    };
+}
